@@ -12,9 +12,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## *Week 2* Application Features
 
-##Video##
 <a href="https://www.loom.com/share/abe0eed5ff5145398e906c52a9a140b2?sid=7235f95c-5b8e-40a6-a383-d0b3ea7e77b7">
-   <p>Student Store UI</p>
+   <p>Student Store UI Video Submission</p>
    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/YOUR_VIDEO_ID-with-play.gif">
 </a>
 
