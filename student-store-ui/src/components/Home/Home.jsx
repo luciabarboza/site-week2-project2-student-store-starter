@@ -98,7 +98,8 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
 
 
       
-      
+      {/* <About/>
+      <Contact/> */}
       
    
       

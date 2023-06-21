@@ -1,146 +1,90 @@
-import * as React from "react"
-import {BrowserRouter,Routes, Route, Router,} from "react-router-dom"
-// import Search from "../Search/Search"
-import {Link} from "react-router-dom"
-import axios from "axios"
-
-import Navbar from "../Navbar/Navbar"
-
-import About from "../About/About"
-import Contact from "../Contact/Contact"
-
-import Counter from "../Counter/Counter"
-
-
-
-
-import Logo from "../Logo/Logo"
-
-import Sidebar from "../Sidebar/Sidebar"
-import ShoppingCart from "../ShoppingCart/ShoppingCart"
-import CheckoutForm from "../CheckoutForm/CheckoutForm"
-
-
-import Home from "../Home/Home"
-import Hero from "../Hero/Hero"
-import ProductGrid  from "../ProductGrid/ProductGrid"
-import ProductCard from "../ProductCard/ProductCard"
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import ProductGrid from "../ProductGrid/ProductGrid";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import ProductDetail from "../ProductDetail/ProductDetail"
-import ProductView from "../ProductView/ProductView"
-
-import NotFound from "../NotFound/NotFound"
-
-import Footer from "../Footer/Footer"
-
-import { useState, useEffect } from "react"
-
-
+import Home from "../Home/Home";
+import About from "../About/About"
+import ProductDetailPage from "../ProductDetailPage 16-08-58-652/ProductDetailPage";
 import "./App.css"
+import Contact from "../Contact/Contact";
 
-
-//complete functions 
-
-// const handleAddItemToCart = () => () {
-
-
-// }
-
-// const handleRemoveItemToCart = () => () {
-
-// }
-
-
+import Hero from "../Hero/Hero"
+import {Link} from "react-router-dom"
 
 export default function App() {
+  const [products, setProducts] = useState([]);
 
-
-    const[products, setProducts] = useState([])
-
-
-  
-
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .get("https://codepath-store-api.herokuapp.com/store")
-    .then((response) => {
-      setProducts(response.data.products)
-      console.log(products)
-    })
-    .catch((error) => {
-      console.error("Unable to fetch data...",error)
-    })
-  },[]);
-
-  // const{name,category,image,source,description,price} = productDetails
-
-const isFetching = false;
-
+      .get("https://codepath-store-api.herokuapp.com/store")
+      .then((response) => {
+        setProducts(response.data.products);
+      })
+      .catch((error) => {
+        console.error("Unable to fetch data...", error);
+      });
+  }, []);
 
   return (
-   
     <div className="app">
-      
-      <BrowserRouter>
+      <Router>
         <main>
 
-        <Navbar/>
-        <Hero/>
-
-
-        
+           <Navbar />
+           <Hero/>
+           <About/>
+           <Home products = {products}/>
+           <Contact/>
+           <Footer/> 
 
           
-        <div>
-
-        
-        
-              <Link to="/"></Link>
+          <Link to="/"></Link>
             
-              <Link to="/about-us"></Link>
-            
-              <Link to="/contact-us"></Link>
+          <Link to="/about-us"></Link>
+                        
+          <Link to="/contact-us"></Link>
+                 
+          <Link to="/products">Products</Link>
 
+
+          <Routes>
+            {/* <Route
+              path="/"
+              element={<ProductGrid products={products} />}
+            /> */}
+            <Route
+              path="/products/:id"
+              element={<ProductDetailPage />}
               
-            
-        
+            />
 
-        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+
+
+
+
+
+
+
+          </Routes>
+
           
-          {/* <Route exact path="/">
-            <ProductGrid products={products}/>
-          </Route>
-
-          <Route path="/products/:productID">
-            <ProductDetail products={products}/>
-          </Route> */}
-
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/contact-us" element={<Contact />} />
-        </Routes>
+        </main>
+      </Router>
     </div>
+  );
+}
+
+
   
          
            
-              
-         
-          {/* <Home products = {products}/> */}
 
 
-          <Sidebar />
-          <Home products = {products}/>
-          <Footer/>
-
-
-        </main>
-        
-      </BrowserRouter>
-
-
-
-      
-    </div>
-  )
-}
 

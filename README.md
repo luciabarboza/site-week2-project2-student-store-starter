@@ -22,7 +22,7 @@ https://www.loom.com/share/1ee92e1bce334de98efebba2e1ecd63d?sid=d088a74c-30eb-45
 - [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
 - [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
 - [X] Users can search for products.
-- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 

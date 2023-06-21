@@ -1,19 +1,26 @@
 import React from "react";
-import "./ProductCard.css"
+import { Link } from "react-router-dom";
+import "./ProductCard.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import Counter from "../Counter/Counter";
+import Counter from "../Counter/Counter"
 
-const ProductCard = ({product})=>{
-    return(
-        <div className="product-card">
-            <img id="product-image-grid" src= {product.image}/>
-            <Counter/>
-            <h1>{product.name}</h1>
-            <div id = "price"></div>{product.price}
-            
-        </div>
 
-    );
-}
+
+const ProductCard = ({ product }) => {
+    
+  return (
+    <div className="product-card">
+      <Link to={`/products/${product.id}`}>
+        <img id="product-image-grid" src={product.image} alt={product.name} />
+        <h1>{product.name}</h1>
+      </Link>
+
+      <div id = "price"></div>{product.price}
+
+      {/* Other product card content */}
+      <Counter/>
+    </div>
+  );
+};
 
 export default ProductCard;
