@@ -17,6 +17,10 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/YOUR_VIDEO_ID-with-play.gif">
 </a>
 
+
+#*GIF/Walkthrough
+https://www.loom.com/share/1ee92e1bce334de98efebba2e1ecd63d?sid=d088a74c-30eb-4530-a126-9416d0c050be
+
 ### Core Features
 
 - [X] The website displays header, banner, search, product grid, about, contact, and footer section.
