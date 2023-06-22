@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import Navbar from "../Navbar/Navbar";
@@ -10,6 +11,7 @@ import About from "../About/About"
 import ProductDetailPage from "../ProductDetailPage 16-08-58-652/ProductDetailPage";
 import "./App.css"
 import Contact from "../Contact/Contact";
+import Sidebar from "../Sidebar/Sidebar"
 
 import Hero from "../Hero/Hero"
 import {Link} from "react-router-dom"
@@ -30,15 +32,29 @@ export default function App() {
 
   return (
     <div className="app">
-      <Router>
+      <BrowserRouter>
         <main>
 
            <Navbar />
-           <Hero/>
-           <About/>
+           {/* <Hero/> */}
+           <Sidebar />
+           {/* <Home/> */}
+
+           
+          
+           {/* <About/> */}
            <Home products = {products}/>
-           <Contact/>
-           <Footer/> 
+           {/* <Home products = {products}/> */}
+           {/* <Contact/> */}
+           
+           {/* need to include footer rn... */}
+           
+           {/* <Footer/> */}
+
+
+
+
+
 
           
           <Link to="/"></Link>
@@ -47,24 +63,27 @@ export default function App() {
                         
           <Link to="/contact-us"></Link>
                  
-          <Link to="/products">Products</Link>
+          {/* <Link to="/products">Products</Link> */}
+          {/* Footer appears above products...??? */}
+
 
 
           <Routes>
-            {/* <Route
-              path="/"
+            <Route path="/"
               element={<ProductGrid products={products} />}
-            /> */}
+            />
             <Route
               path="/products/:id"
               element={<ProductDetailPage />}
               
             />
-
+{/* Dashboard */}
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/products/:id" element={<ProductDetail />} />
+
+            
 
 
 
@@ -74,9 +93,16 @@ export default function App() {
 
           </Routes>
 
+          <div className="Footer">
+          <Contact/>
+          <Footer/>
+          </div>
+
           
         </main>
-      </Router>
+      </BrowserRouter>
+
+     
     </div>
   );
 }

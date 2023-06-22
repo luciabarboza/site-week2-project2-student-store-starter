@@ -14,6 +14,9 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 import Footer from "../Footer/Footer"
 export default function Home({products, handleAddItemToCart, handleRemoveItemToCart}) {
 
+
+  //something to do with product view
+
    //  console.log("Home",products)
   //  if(products.length===0){
   //   console.log("Products empty")
@@ -62,6 +65,9 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
    
     <div className="home">
 
+    <Hero/>
+
+
       
 
       <br/>
@@ -77,6 +83,8 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
       
       </div>
 
+
+
       
 
     
@@ -91,29 +99,23 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
       {/* When we click on a product image, we want to link to a page that shows product image and product description */}
 
       
-
-
-
-
-
-
-      
-      {/* <About/>
-      <Contact/> */}
-      
-   
-      
-
-
       
       <ShoppingCart/>
 
+      
+
       <ProductGrid products = {filteredProducts} onProductClick={handleProductClick}/>
 
+
       <ProductDetail product ={selectedProduct}/>
+
+
+
+
       
 
     </div>
+    
   )
 
 

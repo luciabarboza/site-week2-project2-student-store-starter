@@ -1,0 +1,17 @@
+#footer{
+
+
+    width: 100%;
+    max-width: 100vw;
+    height: 350px;
+    margin: auto;
+
+}
+
+p {
+flex-direction: column;
+display:flex;
+align-items: center;
+
+}
+
