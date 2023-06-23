@@ -25,12 +25,15 @@ const ProductDetailPage = () => {
   return (
      <div>
       {/* <Navbar /> */}
+
+
+      {/* shows the image */}
       
 
        <ProductView 
        product = {product}
        productid={product.id} />
-      <Footer />
+      {/* <Footer /> */}
      </div>
   );
 };

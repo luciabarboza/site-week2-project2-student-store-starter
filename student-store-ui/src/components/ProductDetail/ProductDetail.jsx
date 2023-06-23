@@ -49,11 +49,12 @@
 //   );
 // }
 
+// should make it a p to reduce the spacing here 
+
+// Product detail shows the products on the home page
 const ProductDetail =() => {
   return(
-    <div>
-
-    </div>
+    <div></div>
   )
     
 }

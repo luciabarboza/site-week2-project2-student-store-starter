@@ -1,75 +1,59 @@
-import * as React from "react"
-import "./Sidebar.css"
-import { useState } from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom"
-import {NavLink} from "react-router-dom"
+import "./Sidebar.css";
+import { NavLink } from "react-router-dom";
+import { FaBars, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+const Sidebar = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-import {
-  FaTh,
-  FaBars,
-  FaUserAlt,
-  FaRegChartBar,
-  FaCommentAlt,
-  FaShoppingBag,
-  FaThList
-}from "react-icons/fa";
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
-export default function Sidebar({children}) {
+  const openNav = () => {
+    document.getElementById("mySidenav").style.width = "250px";
+  };
 
-  
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const handleSidebarOpen = () => {
-    setSidebarOpen(true);
-  }
-
-  const handleSidebarClose = () => {
-    setSidebarClose(false);
-  }
-
-
-  const[isOpen ,setIsOpen] = useState(false);
-  const toggle = () => setIsOpen (!isOpen);
-
-  const sideItems=[
-    {
-      path: "/shopping-cart",
-      name: "Shopping Cart"
-    }
-  ]
-
-  // const sideItems = <button>Shopping Cart</button>
+  const closeNav = () => {
+    document.getElementById("mySidenav").style.width = "0";
+  };
 
   
-
-  
-
-
-
 
   return (
+    <div>
+      <div id="mySidenav" className="sidenav">
+
+        <ShoppingCart/>
+        
+        <Link to="#" className="closebtn" onClick={closeNav}> &times; </Link>
+
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/clients">Clients</Link>
+        <Link to="/contact">Contact</Link>
+
+        
+        {/* <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> */}
+      </div>
+      <button className = "openButton" onClick={openNav}>open</button>
+      {/* could also put span..??? */}
+      <div id="main">
+        {/* Add the main content of the page here */}
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;
+
  
 
-    <div className="container">
-               <div className="top_section">
-                   {/* <h1 style={{display: isOpen ? "block" : "none"}}></h1> */}
-                   <div  className="bars">
-                       <FaBars onClick={toggle}/>
-                   </div>
-               </div>
-               {
-                   sideItems.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className="link" activeclassname="active">
-                           <div className="icon">{item.icon}</div>
-                           {/* Allows the items to stay hidden until called */}
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
-                       </NavLink>
-                   ))
-               }
-           {/* </div> */}
-           <main>{children}</main>
-        </div>
-  )
-}
+
 
 

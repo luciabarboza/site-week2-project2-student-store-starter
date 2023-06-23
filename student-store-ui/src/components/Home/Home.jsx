@@ -65,7 +65,6 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
    
     <div className="home">
 
-    <Hero/>
 
 
       
@@ -100,14 +99,17 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
 
       
       
-      <ShoppingCart/>
+      {/* <ShoppingCart/> */}
 
       
+{/* causes searchbar to mess up but allows you to click on products and go to a new page */}
+      
+      {/* <ProductGrid products = {filteredProducts} onProductClick={handleProductClick}/> */}
 
-      <ProductGrid products = {filteredProducts} onProductClick={handleProductClick}/>
 
 
       <ProductDetail product ={selectedProduct}/>
+      
 
 
 

@@ -11,7 +11,8 @@ import About from "../About/About"
 import ProductDetailPage from "../ProductDetailPage 16-08-58-652/ProductDetailPage";
 import "./App.css"
 import Contact from "../Contact/Contact";
-import Sidebar from "../Sidebar/Sidebar"
+import Sidebar from "../Sidebar/Sidebar";
+import ProductView from "../ProductView/ProductView";
 
 import Hero from "../Hero/Hero"
 import {Link} from "react-router-dom"
@@ -31,31 +32,26 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div className= "app">
       <BrowserRouter>
         <main>
+          
 
            <Navbar />
-           {/* <Hero/> */}
-           <Sidebar />
-           {/* <Home/> */}
+           <Hero/>
+           <Sidebar/>
 
-           
+
+
+             
+
+
           
-           {/* <About/> */}
            <Home products = {products}/>
-           {/* <Home products = {products}/> */}
-           {/* <Contact/> */}
+
+
+
            
-           {/* need to include footer rn... */}
-           
-           {/* <Footer/> */}
-
-
-
-
-
-
           
           <Link to="/"></Link>
             
@@ -63,25 +59,33 @@ export default function App() {
                         
           <Link to="/contact-us"></Link>
                  
-          {/* <Link to="/products">Products</Link> */}
-          {/* Footer appears above products...??? */}
+         
+         
+         {/* Footer appears above products...??? */}
 
 
 
           <Routes>
-            <Route path="/"
-              element={<ProductGrid products={products} />}
-            />
+          
+            {/* removing this causes home hero and search to appear twice  but allows search bar to work properly*/}
+
             <Route
               path="/products/:id"
               element={<ProductDetailPage />}
               
             />
-{/* Dashboard */}
-            <Route path="/" element={<Home />} />
+
+             <Route path="/"
+              element={<ProductGrid products={products} />}
+            /> 
+            
+            <Route path="/" element={<Home/>} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/products/:id" element={<ProductDetail />} />
+            
+
+            
 
             
 
@@ -97,6 +101,9 @@ export default function App() {
           <Contact/>
           <Footer/>
           </div>
+
+          {/* <Sidebar isOpen={this.state.sidebarOpen} toggleSidebar={this.handleViewSidebar} /> */}
+
 
           
         </main>
