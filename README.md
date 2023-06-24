@@ -34,13 +34,16 @@ https://www.loom.com/share/1ee92e1bce334de98efebba2e1ecd63d?sid=d088a74c-30eb-45
 
 ## *Week 3* Application Features
 
+## *Week 3 Walkthrough*
+https://www.loom.com/share/a12eff1e57e04e99bd1abbfccf77e818?sid=4c8c62d3-ab73-4da2-9c9a-b148b314c11b
+
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [X] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [X] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
