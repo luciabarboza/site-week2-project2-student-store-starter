@@ -106,6 +106,10 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
       
       {/* <ProductGrid products = {filteredProducts} onProductClick={handleProductClick}/> */}
 
+{/* handle here and put handles of adding cart in product grid here 
+<ProductGrid={handleaddItemtoCart} */}
+
+{/* <Home handleAddItemToCart={handleAddItemToCart}/> */}
 
 
       <ProductDetail product ={selectedProduct}/>

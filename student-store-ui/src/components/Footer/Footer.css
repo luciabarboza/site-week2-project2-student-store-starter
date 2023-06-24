@@ -1,17 +1,26 @@
-#footer{
+.footer{
 
 
     width: 100%;
     max-width: 100vw;
     height: 350px;
     margin: auto;
+    background: white;
 
 }
 
-p {
+/* p {
 flex-direction: column;
 display:flex;
 text-align: center!important;
 
+} */
+
+p{
+    height: 70px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
 

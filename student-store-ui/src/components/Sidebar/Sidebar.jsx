@@ -29,17 +29,14 @@ const Sidebar = ({ children }) => {
         <ShoppingCart/>
         
         <Link to="#" className="closebtn" onClick={closeNav}> &times; </Link>
-
+{/* 
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/clients">Clients</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Contact</Link> */}
 
         
-        {/* <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a> */}
+       
       </div>
       <button className = "openButton" onClick={openNav}>open</button>
       {/* could also put span..??? */}
